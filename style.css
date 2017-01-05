@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.container {
+	width: 100%;
+	max-width: 2000px;
+	margin: 0 auto;
+	min-height: 100vh;
+	background: #001933;
+	font-family: 'Roboto', sans-serif;
+}
+.header {
+    text-align: center;
+    color: #fea400;
+    text-shadow: 2px 2px 3px white;  
+    letter-spacing: 1px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#test{
+    margin-left: 20px;
+    float: right;
+    color: white;
+    transition:all 0.3s ease;
+    background: rgba(0, 0, 0, 0.1);
+}
+#test:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    color: #fea400;
+    border: 2px solid #fea400;
+}
+li {
+    padding: 10px;
+    border: 3px solid #27a877;
+    margin: 10px;
+}
+ul {
+    list-style-type: none;
+    margin-right: 35px;
+    color: #27a877;
+}
+#myField {
+    width: 25%;
+    margin: 0px 50px;
+    padding: 10px;
+    opacity: 0.8;
+    border: 3px solid white;
+    transition:all 0.7s ease;
+}
+#myField:hover, #myField:focus {
+    width: 80%;
+}
+#addElem, #btn-save {
+    margin-left: 45px;
+    padding: 10px;
+    background: #27a877;
+    transition:all 0.3s ease;
+    color: white;
+}
+#addElem:hover, #btn-save:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-left: 5px solid #fea400;
+    border-top: 5px solid #fea400;
+    box-shadow: 5px 5px 5px white;  
+    border-shadow: 1px 1px 2px white;  
+    margin: 0px 500px ;
+}
+input[type="text"], textarea {
+    color: white;
+    background: rgba(0, 37, 97, 0.5); 
+    font-size: 22px;
+}
+input::-webkit-input-placeholder {
+    color: white !important;
+}
+input:-moz-placeholder { /* Firefox 18- */
+    color: white !important;  
+}
+input::-moz-placeholder {  /* Firefox 19+ */
+    color: white !important;  
+}
+input:-ms-input-placeholder {  
+    color: white !important;  
+}
+
