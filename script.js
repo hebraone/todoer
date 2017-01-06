@@ -1,40 +1,34 @@
-var remove = ""
- 
-addElem.addEventListener('click', function myFunction2() {
-    
-    var todo = document.getElementById('myField').value;
-	 	if (todo == "") {
+$('#addElem').click(function myFunction2() {
+    var todo = $('#myField').val().toUpperCase(),
+        $ul = $("#lista"),
+        $li = $('<li></li>'),
+        $remove = $('<button>X</button>');
+	 
+    if (todo == "") {
         alert("Field can't be empty");
         return false;
     }  
-    
-	var todo = todo.toUpperCase(),
-		    ul = document.getElementById("Lista"),
-		    li = document.createElement("li");
-        $(li).hide().appendTo(document.body).fadeIn(1000);
-		    remove = document.createElement("button");
-        $(remove).hide().appendTo(document.body).fadeIn(1000);
+        
+    $li.hide().appendTo(document.body).fadeIn(1000);
+    $remove.hide().appendTo(document.body).fadeIn(1000);
 		
-	remove.setAttribute("id", "test");
-	remove.innerHTML = 'X';
-		
-	remove.addEventListener('click', function () {
-        this.parentNode.removeChild(this);
-	      li.parentNode.removeChild(li);
+	$remove.click(function () {
+        $(this).parent().remove();
     });
 			
-	li.innerHTML = todo;
-	ul.appendChild(li);
-	li.appendChild(remove);
-        
-	remove.addEventListener('click', function () {
-      this.parentNode.removeChild(this);
-	    li.parentNode.removeChild(li);
-	});
-     
-	$("#btn-save").click( function() {
-		var blob = new Blob(["Your Todo List :" + "  " + todo], {type: "text/plain;charset=utf-8"});
-		saveAs(blob, "YourTodoList.txt");
-	});
-  
+	$li.html(todo);
+	$ul.append($li);
+	$li.append($remove);  
+});
+
+$("#btn-save").click( function() {
+    var todoTextList = "",
+        blob;
+
+    $('#lista li').each(function(index, element) {
+        todoTextList += $(element).text() + '\n';
+    });
+    
+    blob = new Blob(["Your Todo List:" + "\n" + todoTextList], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "YourTodoList.txt");
 });
